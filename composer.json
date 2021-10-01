@@ -1,0 +1,26 @@
+{
+    "name": "benlumia007/backdrop-template",
+    "description": "A core that helps you build amazing themes",
+    "keywords": [
+        "wordpress"
+    ],
+    "homepage": "https://github.com/benlumia007/backdrop-template",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Benjamin Lu",
+            "email": "benlumia007@gmail.com",
+            "homepage": "https://benjlu.com",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+          "Benlumia007\\Backdrop\\Template\\": "src/"
+		}
+    },
+    "require": {
+        "php": ">=7.3.24",
+        "benlumia007/backdrop": "v3.0.0.x-dev"
+    }
+}
