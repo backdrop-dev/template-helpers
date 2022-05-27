@@ -11,12 +11,12 @@
 /**
  * Define namespace
  */
-namespace Benlumia007\Backdrop\Template;
+namespace Benlumia007\Backdrop\Template\Helpers;
 
 /**
  * Return the relative path to where templates are held in the theme
  * 
- * @since  3.0.0
+ * @since  1.0.0
  * @access public
  * @param  string $file 
  * @return string
@@ -31,7 +31,7 @@ function path( $file = '' ) {
 /**
  * A better `locate_template()` function than what core WP provides. 
  *
- * @since  3.0.0
+ * @since  1.0.0
  * @access public
  * @param  array|string  $templates
  * @return string
@@ -58,7 +58,7 @@ function locate( $templates ) {
 /**
  * Returns an array of locations to look for templates.
  *
- * @since  3.0.0
+ * @since  1.0.0
  * @access public
  * @return array
  */

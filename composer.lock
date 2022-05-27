@@ -4,55 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ea497c37e4cfe8a90482011fdd3849e2",
-    "packages": [
-        {
-            "name": "benlumia007/backdrop",
-            "version": "3.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/benlumia007/backdrop.git",
-                "reference": "648fcaa023733ac4631e21c2e5c3f96675d79b42"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/benlumia007/backdrop/zipball/648fcaa023733ac4631e21c2e5c3f96675d79b42",
-                "reference": "648fcaa023733ac4631e21c2e5c3f96675d79b42",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.3.24"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Benlumia007\\Backdrop\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Benjamin Lu",
-                    "email": "benlumia007@gmail.com",
-                    "homepage": "https://benjlu.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "A core that helps you build amazing themes",
-            "homepage": "https://github.com/benlumia007/backdrop",
-            "keywords": [
-                "wordpress"
-            ],
-            "support": {
-                "issues": "https://github.com/benlumia007/backdrop/issues",
-                "source": "https://github.com/benlumia007/backdrop/tree/3.0.0"
-            },
-            "time": "2021-11-03T20:53:44+00:00"
-        }
-    ],
+    "content-hash": "08593e9f368cc75d01a26c09521ef2b5",
+    "packages": [],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
@@ -60,8 +13,8 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.3.24"
+        "php": ">=7.4.29"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.3.0"
 }
