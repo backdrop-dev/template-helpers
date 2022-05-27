@@ -13,19 +13,21 @@
  */
 namespace Benlumia007\Backdrop\Template\Helpers;
 
-/**
- * Return the relative path to where templates are held in the theme
- * 
- * @since  1.0.0
- * @access public
- * @param  string $file 
- * @return string
- */
-function path( $file = '' ) {
-	$file = ltrim( $file, '/' );
-	$path = apply_filters( 'backdrop/template/path', 'resources/views' );
-
-	return $file ? trailingslashit( $path ) . $file : trailingslashit( $path );
+if ( ! function_exists( __NAMESPACE__ . '\\path' ) ) {
+	/**
+	 * Return the relative path to where templates are held in the theme
+	 * 
+	 * @since  1.0.0
+	 * @access public
+	 * @param  string $file 
+	 * @return string
+	 */
+	function path( $file = '' ) {
+		$file = ltrim( $file, '/' );
+		$path = apply_filters( 'backdrop/template/path', 'public/views' );
+	
+		return $file ? trailingslashit( $path ) . $file : trailingslashit( $path );
+	}
 }
 
 /**
