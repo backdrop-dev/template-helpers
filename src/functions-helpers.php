@@ -80,8 +80,6 @@ function locations() {
 function filter_templates( $templates ) {
 	$path = path();
 
-	$path = path();
-
 	if ( $path ) {
 		array_walk( $templates, function( &$template, $key ) use ( $path ) {
 
