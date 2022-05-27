@@ -3,8 +3,9 @@
  * Template functions
  * 
  * @package   Backdrop
- * @author    Benjamin Lu ( benlumia007@gmail.com )
- * @copyright Copyright (C) 2019-2021. Benjamin Lu
+ * @author    Benjamin Lu <benlumia007@gmail.com>
+ * @copyright 2019-2021. Benjamin Lu
+ * @link      https://github.com/benlumia007/backdrop-template-helpers
  * @license   https://www.gnu.org/licenses/gpl-2.0.html
  */
 
@@ -30,15 +31,15 @@ if ( ! function_exists( __NAMESPACE__ . '\\path' ) ) {
 	}
 }
 
-/**
- * A better `locate_template()` function than what core WP provides. 
- *
- * @since  1.0.0
- * @access public
- * @param  array|string  $templates
- * @return string
- */
 if ( ! function_exists( __NAMESPACE__ . '\\locate' ) ) {
+	/**
+	 * A better `locate_template()` function than what core WP provides. 
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @param  array|string  $templates
+	 * @return string
+	 */
 	function locate( $templates ) {
 		$located = '';
 	
@@ -59,15 +60,18 @@ if ( ! function_exists( __NAMESPACE__ . '\\locate' ) ) {
 	}
 }
 
-
-/**
- * Returns an array of locations to look for templates.
- *
- * @since  1.0.0
- * @access public
- * @return array
- */
 if ( ! function_exists( __NAMESPACE__ . '\\locations' ) ) {
+	/**
+	 * Returns an array of locations to look for templates.
+	 *
+	 * Note that this won't work with the core WP template hierarchy due to an
+	 * issue that hasn't been addressed since 2010.
+	 *
+	 * @link   https://core.trac.wordpress.org/ticket/13239
+	 * @since  1.0.0
+	 * @access public
+	 * @return array
+	 */
 	function locations() {
 
 		$path = ltrim( path(), '/' );
@@ -85,6 +89,14 @@ if ( ! function_exists( __NAMESPACE__ . '\\locations' ) ) {
 }
 
 if ( ! function_exists( __NAMESPACE__ . '\\filter_templates'  ) ) {
+	/**
+	 * Filters an array of templates and prefixes them with the view path.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @param  array  $templates
+	 * @return array
+	 */
 	function filter_templates( $templates ) {
 		$path = path();
 	
