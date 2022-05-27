@@ -38,24 +38,27 @@ if ( ! function_exists( __NAMESPACE__ . '\\path' ) ) {
  * @param  array|string  $templates
  * @return string
  */
-function locate( $templates ) {
-	$located = '';
-
-	foreach ( ( array ) $templates as $template ) {
-
-		foreach ( locations() as $location ) {
-
-			$file = trailingslashit( $location ) . $template;
-
-			if ( file_exists( $file ) ) {
-				$located = $file;
-				break 2;
+if ( ! function_exists( __NAMESPACE__ . '\\locate' ) ) {
+	function locate( $templates ) {
+		$located = '';
+	
+		foreach ( ( array ) $templates as $template ) {
+	
+			foreach ( locations() as $location ) {
+	
+				$file = trailingslashit( $location ) . $template;
+	
+				if ( file_exists( $file ) ) {
+					$located = $file;
+					break 2;
+				}
 			}
 		}
+	
+		return $located;
 	}
-
-	return $located;
 }
+
 
 /**
  * Returns an array of locations to look for templates.
@@ -64,32 +67,36 @@ function locate( $templates ) {
  * @access public
  * @return array
  */
-function locations() {
+if ( ! function_exists( __NAMESPACE__ . '\\locations' ) ) {
+	function locations() {
 
-	$path = ltrim( path(), '/' );
-
-	// Add active theme path.
-	$locations = [ get_stylesheet_directory() . "/{$path}" ];
-
-	// If child theme, add parent theme path second.
-	if ( is_child_theme() ) {
-		$locations[] = get_template_directory() . "/{$path}";
+		$path = ltrim( path(), '/' );
+	
+		// Add active theme path.
+		$locations = [ get_stylesheet_directory() . "/{$path}" ];
+	
+		// If child theme, add parent theme path second.
+		if ( is_child_theme() ) {
+			$locations[] = get_template_directory() . "/{$path}";
+		}
+	
+		return ( array) apply_filters( 'backdrop/template/locations', $locations );
 	}
-
-	return ( array) apply_filters( 'backdrop/template/locations', $locations );
 }
 
-function filter_templates( $templates ) {
-	$path = path();
-
-	if ( $path ) {
-		array_walk( $templates, function( &$template, $key ) use ( $path ) {
-
-			$template = ltrim( str_replace( $path, '', $template ), '/' );
-
-			$template = "{$path}/{$template}";
-		} );
+if ( ! function_exists( __NAMESPACE__ . '\\filter_templates'  ) ) {
+	function filter_templates( $templates ) {
+		$path = path();
+	
+		if ( $path ) {
+			array_walk( $templates, function( &$template, $key ) use ( $path ) {
+	
+				$template = ltrim( str_replace( $path, '', $template ), '/' );
+	
+				$template = "{$path}/{$template}";
+			} );
+		}
+	
+		return $templates;
 	}
-
-	return $templates;
 }
