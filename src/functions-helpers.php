@@ -76,3 +76,20 @@ function locations() {
 
 	return ( array) apply_filters( 'backdrop/template/locations', $locations );
 }
+
+function filter_templates( $templates ) {
+	$path = path();
+
+	$path = path();
+
+	if ( $path ) {
+		array_walk( $templates, function( &$template, $key ) use ( $path ) {
+
+			$template = ltrim( str_replace( $path, '', $template ), '/' );
+
+			$template = "{$path}/{$template}";
+		} );
+	}
+
+	return $templates;
+}
