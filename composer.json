@@ -16,7 +16,7 @@
     ],
     "autoload": {
         "psr-4": {
-          "Benlumia007\\Backdrop\\Template\\Helpers\\": "src/"
+          "Backdrop\\Template\\Helpers\\": "src/"
 		},
         "files": [
             "src/functions-helpers.php"

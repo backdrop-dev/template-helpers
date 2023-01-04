@@ -12,7 +12,7 @@
 /**
  * Define namespace
  */
-namespace Benlumia007\Backdrop\Template\Helpers;
+namespace Backdrop\Template\Helpers;
 
 if ( ! function_exists( __NAMESPACE__ . '\\path' ) ) {
 	/**
