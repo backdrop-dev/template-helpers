@@ -4,17 +4,15 @@
  * 
  * @package   Backdrop
  * @author    Benjamin Lu <benlumia007@gmail.com>
- * @copyright 2019-2021. Benjamin Lu
+ * @copyright 2019-2023. Benjamin Lu
  * @link      https://github.com/benlumia007/backdrop-template-helpers
  * @license   https://www.gnu.org/licenses/gpl-2.0.html
  */
 
-/**
- * Define namespace
- */
 namespace Backdrop\Template\Helpers;
 
 if ( ! function_exists( __NAMESPACE__ . '\\path' ) ) {
+
 	/**
 	 * Return the relative path to where templates are held in the theme
 	 * 
@@ -23,9 +21,10 @@ if ( ! function_exists( __NAMESPACE__ . '\\path' ) ) {
 	 * @param  string $file 
 	 * @return string
 	 */
-	function path( $file = '' ) {
+	function path( string $file = '' ): string {
+
 		$file = ltrim( $file, '/' );
-		$path = apply_filters( 'backdrop/template/path', 'public/views' );
+		$path = apply_filters( 'backdrop/template/path', 'resources/views' );
 	
 		return $file ? trailingslashit( $path ) . $file : trailingslashit( $path );
 	}
@@ -40,7 +39,7 @@ if ( ! function_exists( __NAMESPACE__ . '\\locate' ) ) {
 	 * @param  array|string  $templates
 	 * @return string
 	 */
-	function locate( $templates ) {
+	function locate( $templates ): string {
 		$located = '';
 	
 		foreach ( ( array ) $templates as $template ) {
@@ -61,6 +60,7 @@ if ( ! function_exists( __NAMESPACE__ . '\\locate' ) ) {
 }
 
 if ( ! function_exists( __NAMESPACE__ . '\\locations' ) ) {
+
 	/**
 	 * Returns an array of locations to look for templates.
 	 *
@@ -72,7 +72,7 @@ if ( ! function_exists( __NAMESPACE__ . '\\locations' ) ) {
 	 * @access public
 	 * @return array
 	 */
-	function locations() {
+	function locations(): array {
 
 		$path = ltrim( path(), '/' );
 	
@@ -89,6 +89,7 @@ if ( ! function_exists( __NAMESPACE__ . '\\locations' ) ) {
 }
 
 if ( ! function_exists( __NAMESPACE__ . '\\filter_templates'  ) ) {
+
 	/**
 	 * Filters an array of templates and prefixes them with the view path.
 	 *
@@ -97,7 +98,7 @@ if ( ! function_exists( __NAMESPACE__ . '\\filter_templates'  ) ) {
 	 * @param  array  $templates
 	 * @return array
 	 */
-	function filter_templates( $templates ) {
+	function filter_templates( array $templates ): array {
 		$path = path();
 	
 		if ( $path ) {
