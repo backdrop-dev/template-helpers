@@ -77,11 +77,12 @@ if ( ! function_exists( __NAMESPACE__ . '\\locations' ) ) {
 		$path = ltrim( path(), '/' );
 	
 		// Add active theme path.
-		$locations = [ get_stylesheet_directory() . "/{$path}" ];
+		$locations = [ get_parent_theme_file_path( $path ) ];
 	
 		// If child theme, add parent theme path second.
 		if ( is_child_theme() ) {
-			$locations[] = get_template_directory() . "/{$path}";
+
+			$locations[] = get_theme_file_path( $path );
 		}
 	
 		return ( array) apply_filters( 'backdrop/template/locations', $locations );
