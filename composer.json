@@ -1,10 +1,8 @@
 {
-    "name": "benlumia007/backdrop-template-helpers",
-    "description": "A core that helps you build amazing themes",
-    "keywords": [
-        "wordpress"
-    ],
-    "homepage": "https://github.com/benlumia007/backdrop-template-helpers",
+    "name": "backdrop-dev/template-helpers",
+    "description": "Backdrop Template Helpers is set a helper functions for setting the path, locations, and filtering templates.",
+    "keywords": [ "classicpress","wordpress" ],
+    "homepage": "https://github.com/backdrop-dev/template-helpers",
     "license": "GPL-2.0-or-later",
     "authors": [
         {
