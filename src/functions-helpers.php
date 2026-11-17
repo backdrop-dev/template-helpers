@@ -4,8 +4,8 @@
  * 
  * @package   Backdrop
  * @author    Benjamin Lu <benlumia007@gmail.com>
- * @copyright 2019-2023. Benjamin Lu
- * @link      https://github.com/benlumia007/backdrop-template-helpers
+ * @copyright 2019-2026. Benjamin Lu
+ * @link      https://github.com/backdrop-dev/template-helpers
  * @license   https://www.gnu.org/licenses/gpl-2.0.html
  */
 
@@ -100,7 +100,7 @@ if ( ! function_exists( __NAMESPACE__ . '\\filter_templates'  ) ) {
 	 * @return array
 	 */
 	function filter_templates( array $templates ): array {
-		$path = path();
+		$path = rtrim( path(), '/' );
 	
 		if ( $path ) {
 			array_walk( $templates, function( &$template, $key ) use ( $path ) {
