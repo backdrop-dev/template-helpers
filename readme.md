@@ -4,7 +4,7 @@ Backdrop Template Helpers is set a helper functions for setting the path, locati
 ## Requirements
 * [ClassicPress](https://www.classicpress.net)
 * [WordPress](https://wordpress.org)
-* [PHP 7.1](https://www.php.net/releases/7_1_33.php)
+* [PHP 7.4](https://www.php.net/releases/7_4_0.php)
 * [Composer](https://getcomposer.org) 
 
 ## Functions
